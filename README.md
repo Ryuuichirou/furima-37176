@@ -10,7 +10,7 @@
 | last_name_kana     | string | null: false                |
 | birthday           | date   | null: false                |
 
-- has_many :Purchase_histories
+- has_many :purchase_histories
 - has_many :items
 
 ## addresses テーブル
@@ -22,19 +22,19 @@
 | postal_cord        | string     | null: false                    |
 | building_name      | string     |                                |
 | telephone_number   | string     | null: false                    |
-| Purchase_history   | references | null: false, foreign_key: true |
+| purchase_history   | references | null: false, foreign_key: true |
 
 - belongs_to :Purchase_history
 
-## Purchase_histories テーブル
+## purchase_histories テーブル
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | user               | references | null: false, foreign_key: true |
 | item               | references | null: false, foreign_key: true |
 
-- has_many :users
-- has_many :items
-- belongs_to :address
+- belongs_to :user
+- belongs_to :item
+- has_one :address
 
 ## items テーブル
 | Column             | Type       | Options                        |
@@ -43,11 +43,11 @@
 | explanation        | text       | null: false                    |
 | category_id        | integer    | null: false                    |
 | condition_id       | integer    | null: false                    |
-| delivery_fee       | integer    | null: false                    |
+| delivery_fee_id    | integer    | null: false                    |
 | prefectures_id     | integer    | null: false                    |
 | delivery_day_id    | integer    | null: false                    |
 | price              | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 - has_many :users
-- belongs_to :Purchase_history
+- has_one :purchase_history
