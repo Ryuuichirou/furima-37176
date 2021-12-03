@@ -59,5 +59,6 @@ group :development do
 end
 
 gem 'devise'
- gem 'factory_bot_rails'
+gem 'factory_bot_rails'
+gem 'pry-rails'
  
