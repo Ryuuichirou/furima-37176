@@ -61,4 +61,7 @@ end
 gem 'devise'
 gem 'factory_bot_rails'
 gem 'pry-rails'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+gem 'active_hash'
  
