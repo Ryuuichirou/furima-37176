@@ -72,6 +72,11 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('User must exist')
       end
+      it '・価格に半角数字以外が含まれている場合は出品できない（※半角数字以外が一文字でも含まれていれば良い）' do
+        @item.user = '350あ'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('User must exist')
+      end
     end
   end
 end
