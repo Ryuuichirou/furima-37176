@@ -16,7 +16,7 @@
 ## addresses テーブル
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| address            | string     | null: false                    |
+| house_number       | string     | null: false                    |
 | prefectures_id     | integer    | null: false                    |
 | municipalities     | string     | null: false                    |
 | postal_cord        | string     | null: false                    |
