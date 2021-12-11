@@ -24,7 +24,7 @@
 | telephone_number   | string     | null: false                    |
 | purchase_history   | references | null: false, foreign_key: true |
 
-- belongs_to :Purchase_history
+- belongs_to :purchase_history
 
 ## purchase_histories テーブル
 | Column             | Type       | Options                        |
