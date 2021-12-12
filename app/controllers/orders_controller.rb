@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
       @purchase_history_address.save
       redirect_to root_path
     else
-      render :"orders/index"
+       render :"orders/index"
     end
   end
 
