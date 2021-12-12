@@ -13,7 +13,7 @@ RSpec.describe PurchaseHistoryAddress, type: :model do
         expect(@purchase_history_address).to be_valid
       end
       it 'building_nameは空でも保存できること' do
-        @purchase_history_address.building_name= ''
+        @purchase_history_address.building_name = ''
         expect(@purchase_history_address).to be_valid
       end
     end
@@ -27,12 +27,12 @@ RSpec.describe PurchaseHistoryAddress, type: :model do
       it 'postal_cordが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
         @purchase_history_address.postal_cord = '1234567'
         @purchase_history_address.valid?
-        expect(@purchase_history_address.errors.full_messages).to include("Postal cord は半角文字で記述する必要があります")
+        expect(@purchase_history_address.errors.full_messages).to include('Postal cord は半角文字で記述する必要があります')
       end
       it 'prefectures_idが1では保存できないこと' do
         @purchase_history_address.prefectures_id = 1
         @purchase_history_address.valid?
-        expect(@purchase_history_address.errors.full_messages).to include("Prefectures must be other than 1")
+        expect(@purchase_history_address.errors.full_messages).to include('Prefectures must be other than 1')
       end
       it 'municipalitiesが空だと保存できないこと' do
         @purchase_history_address.municipalities = ''
@@ -52,17 +52,17 @@ RSpec.describe PurchaseHistoryAddress, type: :model do
       it 'telephone_numberは10桁以上でないと保存できないこと' do
         @purchase_history_address.telephone_number = '090-1234-56789'
         @purchase_history_address.valid?
-        expect(@purchase_history_address.errors.full_messages).to include("Telephone number は半角数値で記述する必要があります")
+        expect(@purchase_history_address.errors.full_messages).to include('Telephone number は半角数値で記述する必要があります')
       end
       it 'telephone_numberは11桁以内でないと保存できないこと' do
         @purchase_history_address.telephone_number = '090-1234-567'
         @purchase_history_address.valid?
-        expect(@purchase_history_address.errors.full_messages).to include("Telephone number は半角数値で記述する必要があります")
+        expect(@purchase_history_address.errors.full_messages).to include('Telephone number は半角数値で記述する必要があります')
       end
       it 'telephone_numberは半角数字以外が含まれている場合保存できないこと' do
         @purchase_history_address.telephone_number = 'あ山y１@'
         @purchase_history_address.valid?
-        expect(@purchase_history_address.errors.full_messages).to include("Telephone number は半角数値で記述する必要があります")
+        expect(@purchase_history_address.errors.full_messages).to include('Telephone number は半角数値で記述する必要があります')
       end
       it 'userが紐付いていないと保存できないこと' do
         @purchase_history_address.user_id = nil
@@ -74,7 +74,7 @@ RSpec.describe PurchaseHistoryAddress, type: :model do
         @purchase_history_address.valid?
         expect(@purchase_history_address.errors.full_messages).to include("Item can't be blank")
       end
-      it "tokenが空では登録できないこと" do
+      it 'tokenが空では登録できないこと' do
         @purchase_history_address.token = nil
         @purchase_history_address.valid?
         expect(@purchase_history_address.errors.full_messages).to include("Token can't be blank")

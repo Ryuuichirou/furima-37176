@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :purchase_history_address do
-    token                 {"tok_abcdefghijk00000000000000000"}
+    token                 { 'tok_abcdefghijk00000000000000000' }
     postal_cord           { '123-4567' }
     prefectures_id        { 2 }
     municipalities        { '横浜市緑区' }
