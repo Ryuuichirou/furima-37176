@@ -9,11 +9,11 @@ class PurchaseHistoryAddress
     validates :user_id
     validates :item_id
     validates :token
-    VALID_PASSWORD_REGEX = /\A[0-9]{3}-[0-9]{4}\z/
-    validates :postal_cord, format: { with: VALID_PASSWORD_REGEX, message: 'は半角文字で記述する必要があります' }
+    VALID_POSTAL_CORD_REGEX = /\A[0-9]{3}-[0-9]{4}\z/
+    validates :postal_cord, format: { with: VALID_POSTAL_CORD_REGEX , message: 'は半角文字で記述する必要があります' }
     validates :prefectures_id, numericality: { other_than: 1 }
-    VALID_PASSWORD_REGEX = /\A-?[0-9]+(\.[0-9]+)?\z/
-    validates :telephone_number, format: { with: VALID_PASSWORD_REGEX, message: 'は半角数値で記述する必要があります' }
+    VALID_TELEPHONE_NUMBER_REGEX = /\A\d{10,11}\z/
+    validates :telephone_number, format: { with: VALID_TELEPHONE_NUMBER_REGEX, message: 'は半角数値で記述する必要があります' }
   end
   def save
     purchase_history = PurchaseHistory.create(user_id: user_id, item_id: item_id)
