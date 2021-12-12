@@ -16,7 +16,7 @@
 ## addresses テーブル
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| address            | string     | null: false                    |
+| house_number       | string     | null: false                    |
 | prefectures_id     | integer    | null: false                    |
 | municipalities     | string     | null: false                    |
 | postal_cord        | string     | null: false                    |
@@ -24,7 +24,7 @@
 | telephone_number   | string     | null: false                    |
 | purchase_history   | references | null: false, foreign_key: true |
 
-- belongs_to :Purchase_history
+- belongs_to :purchase_history
 
 ## purchase_histories テーブル
 | Column             | Type       | Options                        |
