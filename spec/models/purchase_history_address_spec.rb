@@ -49,13 +49,13 @@ RSpec.describe PurchaseHistoryAddress, type: :model do
         @purchase_history_address.valid?
         expect(@purchase_history_address.errors.full_messages).to include("Telephone number can't be blank")
       end
-      it 'telephone_numberは10桁以上でないと保存できないこと' do
-        @purchase_history_address.telephone_number = '090-1234-56789'
+      it 'telephone_numberは9桁以下だと保存できないこと' do
+        @purchase_history_address.telephone_number = '090123456'
         @purchase_history_address.valid?
         expect(@purchase_history_address.errors.full_messages).to include('Telephone number は半角数値で記述する必要があります')
       end
-      it 'telephone_numberは11桁以内でないと保存できないこと' do
-        @purchase_history_address.telephone_number = '090-1234-567'
+      it 'telephone_numberは12桁以上だと保存できないこと' do
+        @purchase_history_address.telephone_number = '090123456789'
         @purchase_history_address.valid?
         expect(@purchase_history_address.errors.full_messages).to include('Telephone number は半角数値で記述する必要があります')
       end
